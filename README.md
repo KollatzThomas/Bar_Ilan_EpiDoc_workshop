@@ -1,4 +1,6 @@
-# title
+# EpiDoc: Epigraphic Documents in TEI XML
 
-online: [https://kollatzthomas.github.io/###](https://kollatzthomas.github.io/###)
-# title
+## Half-Day workshop
+
+online: [https://kollatzthomas.github.io/Bar_Ilan_EpiDoc_workshop](https://kollatzthomas.github.io/Bar_Ilan_EpiDoc_workshop])
+
