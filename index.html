@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>EpiDoc workshop</title>
+        <title>Bar-Ilan EpiDoc workshop</title>
 
         <!-- meta information -->
         <meta name="author" content="Thomas Kollatz" />
@@ -121,15 +121,17 @@
                     <h2>Event structure</h2>-->
                     <ol class="line-height-one-five ">
                         <li>What is Epidoc TEI XML</li>
-                        <li> Using the EpiDoc template file</li>
+                        <li> working with the EpiDoc Template File</li>
+                         <li>encoding <ol>
+                                           
                         <li> text</li>
                         <li> images</li>
-                        <li> metadata </li>
+                        <li> metadata </li></ol></li>
                         <!--
                         <li> How to deal with different interpretations, levels of certainity</li>-->
                        
                        
-                        <li> Interoperability </li>
+                        <li> interoperability </li>
                         <li> EpiDoc Community </li> 
                         <li> software &amp; literature </li>
                     </ol>              
@@ -139,20 +141,148 @@
                 <h3>What is EpiDoc TEI XML</h3>
             </div>
             <div class="step">
+                
+                <dl class="medium">
+                    <dt class="red">EpiDoc TEI XML</dt>
+                    <dd>Epigraphic Documents in TEI XML – XML text markup for ancient documents</dd>
+                </dl>
+                <div class="row">
+                    <div class="four columns">
+                        <figure class="mfp-lightbox">
+                            <a href="resources/img/screencapture-sourceforge-net-p-epidoc-wiki-Home.png"><img
+                                src="resources/img/screencapture-sourceforge-net-p-epidoc-wiki-Home.png" /></a>
+                        </figure>
+                    </div>
+                    <div class="eight columns">
+                        <blockquote class="medium down-50">EpiDoc is <span class="highlight">an
+                            international, collaborative effort</span> that provides guidelines
+                            and tools for encoding scholarly and educational editions of ancient
+                            documents. It uses a <span class="highlight">subset</span> of the Text
+                            Encoding Initiative's standard for the representation of texts in
+                            digital form and was developed initially for the publication of digital
+                            editions of ancient inscriptions [...]It addresses not only the <span
+                                class="highlight">transcription</span> and editorial treatment of
+                            texts themselves, but also the <span class="highlight">history and
+                                materiality</span> of the objects on which the texts
+                            appear.</blockquote>
+                    </div>
+                    <p class="right x-small">
+                        <a href="https://sourceforge.net/p/epidoc/wiki/Home/"
+                            >https://sourceforge.net/p/epidoc/wiki/Home/</a></p>
+                </div>
+            </div>
+            <div class="step">
+                <h2 class="red">EpiDoc Guidelines</h2>
+                <div class="row">
+                    <div class="four columns">
+                        <figure class="mfp-lightbox">
+                            <a href="resources/img/screencapture-stoa-org-epidoc-gl-latest.png"><img src="resources/img/screencapture-stoa-org-epidoc-gl-latest.png"/></a>
+                        </figure>
+                    </div>
+                    <div class="eight columns">
+                        <blockquote class="down-50">EpiDoc <!--specifies a <span class="highlight">subset of the Text Encoding Initiative's standard for the representation of texts in digital form</span> using the Extensible Markup Language (XML), […]. It --> […] <span class="highlight">addresses </span>not only <span class="highlight">the transcription and editorial preparation of the texts themselves</span>, but also <span class="highlight">the history, materiality and metadata of the objects on which the texts appear</span>.
+                            
+                            </blockquote>
+                        <p class="right x-small"><a href="http://www.stoa.org/epidoc/gl/latest/">http://www.stoa.org/epidoc/gl/latest/</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <h2 class="red">How to use the Guidelines</h2>
+                <blockquote>These Guidelines contain descriptions of the textual, descriptive, and other features expressed with EpiDoc, as well as the TEI elements and attributes used to encode them. The pages below provide a number of entry points into the full documentation, via a series of thematic indexes into the content of the Guidelines, rather than a single "table of contents" reflecting a (nonexistent) ordered, hierarchical document structure.</blockquote>
+                <p class="right x-small"><a href="http://www.stoa.org/epidoc/gl/latest/">http://www.stoa.org/epidoc/gl/latest/</a></p>
+            </div>
+            <div class="step">
+                <h2 class="red">Structure of an EpiDoc Edition</h2>
+                <pre>
+<code class="linenumbers">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="en"&gt;
+   &lt;teiHeader&gt;
+     &lt;!-- Metadata --&gt;
+   &lt;/teiHeader&gt;
+
+   &lt;facsimile&gt;
+      &lt;!-- Information on image files --&gt;
+   &lt;/facsimile&gt;
+
+   &lt;text&gt;
+       &lt;!-- Textdata: edition, commentary, translation, etc. --&gt;
+   &lt;/text&gt;
+&lt;/TEI&gt;
+</code></pre>
+                <p class="x-small right">EpiDoc Guidelines: <a
+                    href="http://www.stoa.org/epidoc/gl/latest/supp-structure.html" target="_blank">Structure Of An EpiDoc Edition</a>
+                </p>
+            </div>
+            <div class="step">
                 <h2 class="red">02</h2>
-                <h3>Using the EpiDoc template file</h3>
+                <h3>working with the EpiDoc Template File</h3>
+            </div>
+            <div class="step">
+                <h2 class="red">ex-epidoctemplate.xml</h2>
+                <p>EpiDoc offers a template file <code><a
+                    href="data/ex-epidoctemplate.xml"
+                    >ex-epidoctemplate.xml</a></code>, which can be downloaded here: <a href="http://www.stoa.org/epidoc/gl/latest/supp-structure.html" target="_blank">http://www.stoa.org/epidoc/gl/latest/supp-structure.html</a></p>
+            </div>
+            <div class="step ">
+                <fieldset><legend class="red centered">Learning by Doing</legend>
+                    <ul class="down-50 line-height-one-five">
+                        <li> Open <code><a href="data/ex-epidoctemplate.xml"
+                            >ex-epidoctemplate.xml</a></code> in the Oxygen XML Editor</li>
+                        <li> Get an overview of the structure of an EpiDoc XML file</li>
+                        <li> Try out the onboard equipment: Use <code>F2</code> to learn more about the specific meaning of an element</li>
+                    </ul>
+                </fieldset>
+                <p class="x-small right">EpiDoc Guidelines: <a
+                    href="http://www.stoa.org/epidoc/gl/latest/supp-structure.html">Structure Of
+                    An EpiDoc Edition</a></p>
             </div>
             <div class="step">
                 <h2 class="red">03</h2>
-                <h3>text</h3>
+                <h3>encoding text</h3>
             </div>
             <div class="step">
                 <h2 class="red">04</h2>
-                <h3>images</h3>
+                <h3>encoding images</h3>
             </div>
             <div class="step">
                 <h2 class="red">05</h2>
-                <h3>metadata</h3>
+                <h3>encoding metadata</h3>
+            </div>
+            <div class="step">
+                <h2 class="red">The only way to fight chaos </h2>
+                <blockquote>Why store data about an object, when you have the object itself? Because
+                    without data about the objects contained in a space, any sufficiently complex
+                    space is indistinguishable from chaos.
+                    <p class="x-small right">Pomerantz 2017</p>
+            </blockquote>
+            </div>
+            
+            <div class="step">
+                <h2 class="red">Use Licences</h2>
+                <p>Recommendation: CreativeCommons <a href="https://creativecommons.org/choose/"
+                    >Choose a licence</a></p>
+                <div class="row ">
+                    <div class="twalve columns ">
+                        <figure class="mfp-lightbox">
+                            <a href="resources/img/rufus_pollock.jpg">
+                                <img src="resources/img/rufus_pollock.jpg" style="width:50rem"/>
+                            </a>
+                        </figure>
+                    </div>
+                    <div><p class="x-small right">source: <a href="https://twitter.com/rufuspollock"
+                        >Rufus Pollock</a></p></div>
+                </div>
+            </div>
+            <div class="step">
+                <h2 class="red">Form follows Function</h2>
+                <blockquote>What characterises this class of objects is that they form a whole with
+                    their physical support. Indeed, the meaning of an epigraph cannot be fully
+                    understood without the analysis of the object or monument or other
+                    archaeological object on which it appears, just as one cannot fully understand
+                    the nature of that particular archaeological object without thoroughly
+                    investigating the sense of the inscription or iconographic representation it
+                    hosts"</blockquote>
+                <p class="x-small right">Felicetti et al., 2016</p>
             </div>
             
          
@@ -162,14 +292,230 @@
                 <h3>interoperability</h3>
             </div>
             <div class="step">
+                <h2 class="red">###</h2>
+                <blockquote class="down-50"> By using controlled vocabularies project-specific
+                    findings are addressed by unique identifiers [digital shelf mark] </blockquote>
+            </div>
+            <div class="step ">
+                <h2 class="red">authority files | controlled vocabularies</h2>
+                <ul class="line-height-one-five medium">
+                    <li>places (ancient)– <a href="http://pleiades.stoa.org/places/678401"
+                        >Pleiades</a>, 
+                   <a
+                        href="http://www.getty.edu/vow/TGNServlet?english=Y&amp;find=Frankfurt&amp;place=inhabited+place&amp;page=1&amp;nation="
+                        >Thesaurus of Geographic Names </a> [TGN] refer to Frankfurt as <a
+                            href="http://vocab.getty.edu/tgn/7005293"
+                            ><code>http://vocab.getty.edu/tgn/7005293</code></a>, place names in the Hebrew Script – <a href="https://geo-kima.org">Kima
+                        Historical Gazeteer</a> An open, attestation based, historical
+                        database</li>
+                    <li>person names – <a href="http://d-nb.info/gnd/11879132X"></a>German National
+                        Library Identificators [GND] [<a
+                            href="http://www.steinheim-institut.de/cgi-bin/epidat?id=ffb-80-1"
+                            >example</a>]</li>
+                    
+                    
+                    <li>physical form | symbols | material<ul class="line-height-one-five">
+                        
+                        
+                        <li><a
+                            href="http://www.getty.edu/vow/AATFullDisplay?find=headstone&amp;logic=AND&amp;note=&amp;subjectid=300266769"
+                            >Arts and Architecture Thesaurus</a>
+                            <q>to improve access to information about art, architecture, and
+                                material culture</q> [AAT] refer to as <a
+                                    href="http://vocab.getty.edu/aat/300266769"
+                                    ><code>http://vocab.getty.edu/aat/300266769</code></a></li>
+                        <li><a href="http://www.iconclass.org/rkd/25G41%28LILY%29/"
+                            >Iconclass</a>
+                            <q>a multilingual classification system for cultural
+                                content</q></li>
+                        <li><a href="https://www.eagle-network.eu/resources/vocabularies/"
+                            >EAGLE</a> [The Europeana network of Ancient Greek and Latin
+                            Epigraphy] vocabularies</li>
+                    </ul></li>
+                </ul>
+                
+            </div>
+            <div class="step">
                 <h2 class="red">07</h2>
                 <h3>EpiDoc Community</h3>
             </div>
             <div class="step">
-                <h2 class="red">08</h2>
-                <h3>software &amp; literature</h3>
+                <h2 class="red">EpiDoc Projects</h2>
+               
+                <table class="x-small">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th><a href="http://cds.library.brown.edu/projects/Inscriptions">IIP</a>
+                                – Inscriptions of Israel | Palestine</th>
+                            <th><a href="http://www.steinheim-institut.de/cgi-bin/epidat?lang=en"
+                                >epidat</a> – Database of Jewish Epigraphy</th>
+                            <th><a href="http://www.inschriften.net">DIO</a> – Deutsche Inschriften
+                                Online</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>online</strong></td>
+                            <td><figure style="text-align:left;border:0;margin:0"><img
+                                src="resources/img/IIP.png" style="width:20rem"
+                            /></figure></td>
+                            <td><figure style="text-align:left;border:0;margin:0"><img
+                                src="resources/img/epidat_whatisit.png" style="width:30rem"
+                            /></figure></td>
+                            <td><figure style="text-align:left;border:0;margin:0"><img
+                                src="resources/img/dio.png" style="width:30rem"
+                            /></figure></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><strong>quantity</strong></td>
+                            <td><a
+                                href="http://library.brown.edu/search/solr_pub/iip/?q=*%3A*&amp;start=0&amp;rows=0&amp;indent=on&amp;facet=on&amp;facet.field=religion&amp;wt=json"
+                                >3.700</a></td>
+                            <td><a href="http://steinheim-institut.de/cgi-bin/epidat?info=peranno"
+                                >35.000</a></td>
+                            <td><a title="ca.">ca. 18.000</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>time</strong></td>
+                            <td>500 BCE - 640 CE</td>
+                            <td>midth 11<sup>th</sup> - 20<sup>th</sup> century</td>
+                            <td>500-1650 CE</td>
+                        </tr>
+                        <tr>
+                            <td><strong>space</strong></td>
+                            <td>Israel | Palestine</td>
+                            <td>Germany | The Netherlands | Czechia | Lithuania</td>
+                            <td>Germany | Austria | South Tyrol</td>
+                        </tr>
+                       <!-- <tr>
+                            <td><strong>Genre</strong></td>
+                            <td>Different</td>
+                            <td>Funeral Inscriptions</td>
+                            <td>Different </td>
+                        </tr>-->
+                        <!--<tr>
+                            <td><strong>Format</strong></td>
+                            <td colspan="3" class="centered">EpiDoc: TEI XML for Epigraphic
+                                Documents</td>
+                        </tr>-->
+                        <tr>
+                            <td><strong>Example</strong></td>
+                            <td><a
+                                href="http://library.brown.edu/cds/projects/iip/viewinscr/qumr0001/"
+                                >QUAMR0001</a></td>
+                            <td><a
+                                href="http://www.steinheim-institut.de/cgi-bin/epidat?id=ffb-80&amp;lang=en"
+                                >ffb-80</a></td>
+                            <td><a href=""></a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="step">
+                <h2 class="red">Synergies</h2>
+                <p>XML-paths works both for</p><ul>
+                    <li> IIP,</li>
+                    <li> epidat,</li>
+                    <li> DIO </li>
+                    <li> as well as many other EpiDoc encoded research data</li>
+                </ul>
+                <pre class="xml"><code>&lt;!-- path to <span class="highlight">edition</span> --&gt;
+/TEI//body//div [@type='edition']
+
+&lt;!-- path to <span class="highlight">persons</span> --&gt;
+/TEI/teiHeader/profileDesc/particDesc/listPerson/person
+
+&lt;!-- <span class="highlight">metadata</span> --&gt;
+/TEI/teiHeader 
+                    
+&lt;!-- <span class="highlight">data</span> --&gt;
+/TEI/text</code></pre>
+            </div>
+            <div class="step">
+                <h2 class="red">Texts published online with EpiDoc source available</h2>
+                <p class="x-small">These projects are the source of most examples used in the
+                    Guidelines.</p>
+                <ul class="x-small line-height-one">
+                    <li id="apis"><a href="http://www.columbia.edu/cu/lweb/projects/digital/apis/"
+                        >Advanced Papyrological Information System</a> (APIS)</li>
+                    <li id="ala"><a href="http://insaph.kcl.ac.uk/ala2004/">Aphrodisias in late
+                        Antiquity</a> (ALA)</li>
+                    <li id="cic"><a href="http://isaw.nyu.edu/publications/inscriptions/campa/"
+                        >Corpus of the Inscriptions of Campā</a> (CIC)</li>
+                    <li id="epidat"><a href="http://www.steinheim-institut.de/cgi-bin/epidat"
+                        >Datenbank Jüdische Grabsteinepigraphik</a> (Epidat)</li>
+                    <li id="ddb"><a href="http://papyri.info">Duke Databank of Documentary
+                        Papyri</a> (DDbDP)</li>
+                    <li id="hgv"><a href="http://www.rzuser.uni-heidelberg.de/~gv0/">Heidelberger
+                        Gesamtverzeichnis der griechischen Papyrusurkunden Ägyptens</a>
+                        (HGV)</li>
+                    <li id="iaph"><a href="http://insaph.kcl.ac.uk/iaph2007/index.html">Inscriptions
+                        of Aphrodisias</a> (IAph)</li>
+                    <li id="iospe"><a href="http://iospe.kcl.ac.uk/">Inscriptiones antiquae Orae
+                        Septentrionalis Ponti Euxini graecae et latinae</a> (IOSPE)</li>
+                    <li id="iip">Inscriptions of Israel-Palestine</li>
+                    <li id="irt"><a href="http://inslib.kcl.ac.uk/irt2009/">Inscriptions of Roman
+                        Tripolitania</a> (IRT)</li>
+                    <li id="ircyr"><div class="biblfree" id="ircyr">Inscriptions of Roman Cyrenaica
+                        (forthcoming) (IRCyr)</div></li>
+                    <li id="igcyr">Inscriptions of Greek Cyrenaica (forthcoming) (IGCyr)</li>
+                    <li id="pandektis"><div class="biblfree" id="pandektis">Pandektis</div></li>
+                    <li id="rib"><a href="http://www.romaninscriptionsofbritain.org/">Roman
+                        Inscriptions of Britain</a> (RIB)</li>
+                    <li id="vicyr">Verse Inscriptions of Cyrenaica (forthcoming) (VICyr)</li>
+                    <li id="tvind"><a href="http://vindolanda.csad.ox.ac.uk">Vindolanda Tablets
+                        Online</a> (VTO)</li>
+                    <li id="tvind2"><a href="http://vto2.classics.ox.ac.uk">Vindolanda Tablets
+                        Online II</a> (VTO2)</li>
+                </ul>
+                <p class="right x-small"><a
+                    href="http://www.stoa.org/epidoc/gl/latest/app-bibliography.html"
+                    >http://www.stoa.org/epidoc/gl/latest/app-bibliography.html</a></p>
+            </div>
+            <div class="step">
+                <h2 class="red">EpiDoc Community</h2>
+                <div class="row">
+                    <div class="six columns">
+                        <figure class="mfp-lightbox even-left">
+                            <a
+                                href="resources/img/screencapture-sourceforge-net-p-epidoc-wiki-Home.png"
+                                ><img
+                                    src="resources/img/screencapture-sourceforge-net-p-epidoc-wiki-Home.png"
+                                    style="width:50%" /></a>
+                        </figure>
+                        <p class="x-small"><a href="https://sourceforge.net/p/epidoc/wiki/Home/"
+                            >https://sourceforge.net/p/epidoc/wiki/Home/</a></p>
+                    </div>
+                    <div class="six columns">
+                        <ul class="line-height-one-five even-left medium">
+                           <!-- <li><a href="https://sourceforge.net/p/epidoc/wiki/Home/">EpiDoc
+                                Homepage | Wiki</a></li>-->
+                            <li><a href="http://www.stoa.org/epidoc/gl/latest/">EpiDoc
+                                Guidelines</a> The startpage provides a number of entry points </li>
+                            
+                            
+                            <li><a href="https://lsv.uky.edu/archives/markup.html">markup
+                                mailinglist</a> i.e. EpiDoc mailinglist for all your questions
+                                concerning (Digital) Epigraphy, TEI and EpiDoc TEI XML <a
+                                    href="https://lsv.uky.edu/scripts/wa.exe?A2=ind1110&amp;L=MARKUP&amp;P=R239&amp;I=-3&amp;d=No+Match%3BMatch%3BMatches"
+                                    >example: How to deal with names? </a></li>
+                            
+                            <li><a href="https://sourceforge.net/p/epidoc/wiki/Software/">Software
+                                and tools</a></li>
+                            <li><a href="http://epidoc.dainst.org">EpiDoc Converter API</a> based on the
+                                EpiDoc Stylesheets – currently no satisfactory Right-to-Left Support</li>
+                            <li><a href="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">EpiDoc
+                                Stylesheets </a> for transforming EpiDoc XML to HTML, text or ODF</li>
+                        </ul></div>
+                </div>
+            </div>
+           <!-- <div class="step">
+                <h2 class="red">08</h2>
+                <h3>software &amp; literature</h3>
+            </div>-->
+            <!--<div class="step">
                 <div class="row">
                     <div class="six columns"><h2 class="red">###</h2>
                         <figure class="mfp-lightbox"><a href=""><img src="" /></a></figure>
@@ -179,22 +525,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="step" id="literature">
-                <h2 class="red">Software &amp; Literatur</h2>
-                <h4>Software</h4>
-                <ul class="small line-height-one-five">
-                    <li>
-                        <a href="https://github.com/impress/impress.js">Impress.js</a>
-                        (Präsentation) </li>
-                    <li>
-                        <a href="https://github.com/dimsemenov/Magnific-Popup">Magnific Popup</a>
-                        (Lightbox) </li>
-                </ul>
-            </div>
-            <div class="step">
-                <h2 class="red centered">DEMO</h2>
-            </div>
+            </div>-->
             <div class="step">
                 <div class="centered">
                     <h1 class="red">F I N I S</h1>
@@ -202,9 +533,107 @@
                 </div>
                 <div class="centered down-100">
                     <h3>
-                        <a href="#literature">Software und Literatur</a></h3><p class="x-small"></p>
+                        <a href="#literature">software and literature</a></h3><p class="x-small"></p>
                 </div>
             </div>
+            <div class="step" id="literature">
+                <h2 class="red">software &amp; literature</h2>
+                <h4>Software</h4>
+                <ul class="small line-height-one-five">
+                    <li>
+                        <a href="https://github.com/impress/impress.js">Impress.js</a>
+                        (presentation) </li>
+                    <li>
+                        <a href="https://github.com/dimsemenov/Magnific-Popup">Magnific Popup</a>
+                        (images) </li>
+                </ul>
+            
+                <h4>XML-Editor</h4>
+                <ul class="small line-height-one-five">
+                    <li>
+                        <a href="https://www.oxygenxml.com">Oxygen XML Editor</a>
+                        <ul>
+                            <li><a href="https://www.oxygenxml.com/demo/BIDI_Support.html">The
+                                Bidirectional (BiDi) Editing Support</a></li>
+                            <li><a
+                                href="https://www.oxygenxml.com/doc/versions/19.1/ug-editor/topics/bidi-support-x-editing2.html"
+                                >Special Character Support in Author Mode</a></li>
+                            <li><a
+                                href="https://www.oxygenxml.com/doc/versions/19.1/ug-editor/topics/control-text-direction-markup-x-editing2.html"
+                                >Controlling the Text Direction Using XML Markup</a></li>
+                        </ul></li>
+                    <!--<li>Oxygen Framework<ul>
+                        <li>Video <a
+                            href="https://www.oxygenxml.com/demo/FrameworkConfiguration.html"
+                            >Configuring a Framework</a></li>
+                        <li><a
+                            href="https://www.oxygenxml.com/oxygen_sdk/author_framework_development.html"
+                            >Author Framework Development</a></li>
+                    </ul></li>-->
+                    <!--<li><abbr><a href="https://github.com/EpiDoc/EFES/wiki">EFES</a></abbr> – EpiDoc
+                        Front-End Services – a free, easy to use, highly customisable platform for
+                        the online publication of ancient texts in EpiDoc XML, allowing the creation
+                        of multiple indices, search and browse interface, geographical
+                        visualisation, and integration with linked open data. </li>-->
+                    
+                </ul>
+            </div>
+            <div class="step">
+                <h4>TEI</h4>
+                <ul class="small line-height-one-five">
+                    <li><a href="http://www.tei-c.org/Guidelines/P5/">TEI: P5 Guidelines</a></li>
+                    <li>Lou Burnard: <a href="http://books.openedition.org/oep/426">WHAT IS THE TEXT
+                        ENCODING INITIATIVE?</a> How to add intelligent markup to digital
+                        resources</li>
+                    <li><a href="http://teibyexample.org">TEI by Example</a></li>
+                </ul>
+                <h4>Digital Epigraphy and EpiDoc</h4>
+                <ul class="small line-height-one-five">
+                    <li>Tom Elliott, Gabriel Bodard, Hugh Cayless et al. (2006-2017), <a
+                        href="https://sourceforge.net/p/epidoc/wiki/Home/">EpiDoc: Epigraphic
+                        Documents in TEI XML. Online material</a>, available: &lt;<a
+                            href="http://epidoc.sf.net">http://epidoc.sf.net</a>&gt;</li>
+                    
+                    <li>Julia Flanders; Charlotte Roueché: <a
+                        href="http://www.stoa.org/epidoc/gl/latest/intro-eps.html">Gentle
+                        Introduction To Mark-Up For Epigraphers</a>
+                    </li>
+                    <li>Bodard G. &amp; Stoyanova S. 2016. <a href="https://doi.org/10.5334/bat.d"
+                        >Epigraphers and Encoders</a>: Strategies for Teaching and Learning
+                        Digital Epigraphy. In: Romanello M. &amp; Bodard G, Digital Classics Outside
+                        the Echo-Chamber. London: Ubiquity Press.</li>
+                    <li>H. Cayless; C.M. Roueché; Tom Elliott; Gabriel Bodard (2009): "Epigraphy in
+                        2017." Digital Humanities Quarterly 3.1. <a
+                            href="http://digitalhumanities.org/dhq/vol/3/1/000030/000030.html"
+                            >http://digitalhumanities.org/dhq/vol/3/1/000030/000030.html</a></li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="step">
+                <h4>More … </h4>
+                <ul class="line-height-one-five small">
+                    <li><a href="https://programminghistorian.org">The Programming Historian</a>
+                        <q>We publish novice-friendly, peer-reviewed tutorials that help humanists
+                            learn a wide range of digital tools, techniques, and workflows to
+                            facilitate research and teaching. We are committed to fostering a
+                            diverse and inclusive community of editors, writers, and
+                            readers.</q></li>
+                    <li>to be continued …</li>
+                </ul>
+                <!--         <h4>Download</h4>
+                <ul class="small line-height-one-five">
+                    <li>slides <a href="https://digicademy.github.io/2018_EAJS_WS_1">
+                            https://digicademy.github.io/2018_EAJS_WS_1 </a>
+                    </li>
+                    <li> License: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY
+                            4.0</a>, Max Grüntgens, Thomas Kollatz, Torsten Schrade </li>
+                </ul> -->
+            </div>
+<!--            <div class="step">
+                <h2 class="red centered">DEMO</h2>
+            </div>-->
+            
         </div>
         <!-- jquery -->
         <script src="vendor/jquery/jquery-1.11.0.min.js"></script>
