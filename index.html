@@ -388,28 +388,28 @@
                     </tr>
                     
                         <tr>
-                        <td>line begins in word</td>
+                            <td><a href="http://www.stoa.org/epidoc/gl/latest/trans-linebreakinword.html">line begins in word</a></td>
                         <td/>
                         <td>&lt;lb n="4" break="no"/&gt;</td>
                     </tr>
                     <tr>
-                        <td>numbers</td>
+                        <td><a href="http://www.stoa.org/epidoc/gl/latest/trans-numknown.html" target="_blank">numbers</a></td>
                         <td dir="rtl" lang="heb" class="right">לג</td>
                         <td>&lt;num value="33"&gt;</td>
                     </tr>
                     <tr>
-                        <td>abbreviated words</td>
-                        <td dir="rtl" lang="heb" class="right">שנפטר נשמת</td>
+                        <td><a href="http://www.stoa.org/epidoc/gl/latest/trans-abbrevfully.html">abbreviated words</a></td>
+                        <td dir="rtl" lang="heb" class="right">שנפטר</td>
                         <td>&lt;expan&gt;&lt;abbr&gt;&lt;ex&gt;</td>
                     </tr>
                     
                     <tr>
-                        <td>abbreviated words with abbrevation mark</td>
+                        <td><a href="http://www.stoa.org/epidoc/gl/latest/trans-abbrevmark.html">abbreviated words with abbrevation mark</a></td>
                         <td dir="rtl" lang="heb" class="right">בג׳ עדן</td>
                         <td><a href="http://www.stoa.org/epidoc/gl/latest/trans-abbrevmark.html">guidelines</a></td>
                     </tr>
                     <tr>
-                        <td>gap</td>
+                        <td><a href="http://www.stoa.org/epidoc/gl/latest/trans-lacunasegmented.html">gap</a></td>
                         <td dir="rtl" lang="heb" class="right">ה..ורהה</td>
                         <td>&lt;gap agent="damage" reason="lost"
                             unit="character" quantity="2"/&gt;<br/>
@@ -442,9 +442,9 @@
                 </blockquote>
             </div>
             <div class="step">
-                <h2 class="red">Use Licences</h2>
+                <h2 class="red">title, publisher, licences</h2>
                 <p>Recommendation: CreativeCommons <a href="https://creativecommons.org/choose/"
-                        >Choose a licence</a></p>
+                    >Choose a licence</a></p>
                 <div class="row ">
                     <div class="twalve columns ">
                         <figure class="mfp-lightbox">
@@ -454,9 +454,40 @@
                         </figure>
                     </div>
                     <div><p class="x-small right">source: <a href="https://twitter.com/rufuspollock"
-                                >Rufus Pollock</a></p></div>
+                        >Rufus Pollock</a></p></div>
                 </div>
             </div>
+            <div class="step">
+                <h2 class="red">date, place, names</h2>
+                <blockquote>
+                    EpiDoc provides for both detail and flexibility in describing what is known or recorded about the origin and subsequent history of a text-bearing object. […] this information is collected in a &lt;history&gt; element that is part of the &lt;msDesc&gt; in the &lt;teiHeader&gt;. 
+                </blockquote>
+                <p class="x-small right"><a href="http://www.stoa.org/epidoc/gl/latest/supp-history.html" target="_blank">Provenance Of The Text-Bearing Object</a></p>
+            </div>
+            <div class="step">
+                <h2 class="red">place</h2>
+                <table>
+
+                    <tr><th>element</th><th>value</th></tr><tr> <td>settlement</td>
+                    <td>Frankfurt/Main</td></tr>
+                    <tr> <td>geogName</td>
+                    <td>Jewish cemetery</td></tr>
+                    <tr><td>geo</td>
+                        <td>50.1119 8.689675</td></tr>
+                    
+                </table>
+            </div>
+            <div class="step"><h2 class="red">date</h2>
+                <blockquote>
+                    The date of orgin of the text (or object, if different) should be recorded in an origDate element in the &lt;origin&gt; section of the manuscript description area. [...]                        
+                        It is generally recommended to encode the dating information in numerical form, following the proleptic Julian calendar, using the att.datable.custom attributes on the origDate element. These "custom" date attributes are required because the default dating system assumed by the basic TEI date attributes (att.datable) is the Gregorian calendar. Moreover, therefore, the dating element should always carry a datingMethod attribute pointing to a &lt;calendar&lt; element in the header
+                </blockquote>
+                <p class="x-small right"><a href="http://www.stoa.org/epidoc/gl/latest/supp-historigdate.html">Original Date Of Text And/Or Object</a></p></div>
+            <div class="step"><h2 class="red">date</h2>
+            <table>
+                <tr><td>1272-12-06</td><td>julian</td></tr>
+                <tr><td>14. Tewet 5033</td><td>hebrew</td></tr>
+            </table></div>
             <div class="step">
                 <h2 class="red">Form follows Function</h2>
                 <blockquote>What characterises this class of objects is that they form a whole with
@@ -468,6 +499,37 @@
                     hosts"</blockquote>
                 <p class="x-small right">Felicetti et al., 2016</p>
             </div>
+            
+            <div class="step"><h2 class="red">persons and their relations</h2>
+                <table><tr><td>name</td><td>Bela</td></tr>
+                <tr><td>dateofdeath</td><td>1271-12-06</td></tr>
+                <tr><td>relation</td><td>daughter of Natan</td></tr></table>
+                <table>
+                    <tr><td>name</td><td>Natan</td>
+                    <td>relation</td><td>father of Bela</td></tr>
+                </table>
+            </div>
+            <div class="step">
+                <h2 class="red">Physical Description</h2>
+                <blockquote>Information describing the physical aspects of an inscription is encoded in the &lt;physDesc&gt; element, which is part of the &lt;teiHeader&gt;.
+                    […]  You can align your definitions by aligning to a local or to an external Controlled Vocabulary.</blockquote><p class="x-small right"><a href="http://www.stoa.org/epidoc/gl/latest/supp-description.html">Physical Description</a></p>
+            </div>
+            <div class="step">
+                <h2 class="red">text-bearing object</h2>
+               <table> <tr>
+                    <td>material</td>
+                </tr>
+                <tr>
+                    <td>dimensions</td>
+                </tr>
+                <tr>
+                    <td>form</td>
+                </tr>
+                <tr>
+                    <td>objecttype</td>
+                </tr></table>
+            </div>
+            
             <div class="step">
                 <h2 class="red">06</h2>
                 <h3>interoperability</h3>
@@ -706,6 +768,20 @@
                     </div>
                 </div>
             </div>-->
+            <div class="step">
+                <h2 class="red">Digital Epigraphy and Traditional Epigraphy</h2>
+                <blockquote> The focus of such a class is not so much an intensive EpiDoc training,
+                    but rather demonstrating that structured markup is nothing more than structured
+                    thinking about data. The structure of an XML document reflects the structure of
+                    an epigraphic edition. <span class="highlight">Following the strict hierarchy of
+                        XML forces one to better organise one’s thoughts, approach towards, and work
+                        on an epigraphic document</span>. We have found that it is highly beneficial
+                    to be able to process and produce information in a well structured and clearer
+                    way, even if the students do not show interest in further DH
+                    training.</blockquote>
+                <p class="x-small right"><a href="http://dx.doi.org/10.5334/bat.d">Bodard and
+                    Stoyanova 2016</a></p>
+            </div>
             <div class="step">
                 <div class="centered">
                     <h1 class="red">F I N I S</h1>
