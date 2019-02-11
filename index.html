@@ -278,6 +278,7 @@
                 
                 <figure class="mfp-lightbox"><a href="resources/img/ffb-98_schemaboxes.png"><img
                             src="resources/img/ffb-98_schemaboxes.png" /></a></figure>
+                <p class="x-small"><a href="http://www.steinheim-institut.de/cgi-bin/epidat?id=ffb-98">ffb-98</a></p>
             </div>
             <div class="step">
                 <h2 class="red">03</h2>
@@ -442,30 +443,53 @@
                 </blockquote>
             </div>
             <div class="step">
-                <h2 class="red">title, publisher, licences</h2>
-                <p>Recommendation: CreativeCommons <a href="https://creativecommons.org/choose/"
-                    >Choose a licence</a></p>
+                <h2 class="red">title, id, licence</h2>
+                <table class="small">
+                    <tr>
+                        <td>title</td>
+                        <td>headstone of Bela bat Natan</td>                 
+                    <td><pre><code >/TEI/teiHeader/fileDesc/titleStmt/title</code></pre></td>
+                        </tr>
+                   <tr>
+                       <td>identifier</td>
+                       <td>ffb-98</td>
+                       <td><pre><code>/TEI/teiHeader/fileDesc/publicationStmt/idno</code></pre></td>
+     
+                   </tr>
+                    <tr>
+                        <td>licence</td>
+                        <td><a href="https://creativecommons.org/choose/"
+                            >Creative Commons</a></td>
+                        <td><pre><code>/TEI/teiHeader/fileDesc/publicationStmt/availability/licence/ref</code></pre></td>
+                    </tr>
+                </table>
+                
                 <div class="row ">
-                    <div class="twalve columns ">
+                    <div class="six columns ">
+                        <blockquote>the best thing to do with your data will be thought by somebody else.</blockquote>
+                        <p class="x-small right">source: <a href="https://twitter.com/rufuspollock"
+                            >Rufus Pollock</a></p>
+                    </div>
+                    <div class="six columns">
                         <figure class="mfp-lightbox">
                             <a href="resources/img/rufus_pollock.jpg">
-                                <img src="resources/img/rufus_pollock.jpg" style="width:50rem" />
+                                <img src="resources/img/rufus_pollock.jpg" style="width:10rem" />
                             </a>
                         </figure>
                     </div>
-                    <div><p class="x-small right">source: <a href="https://twitter.com/rufuspollock"
-                        >Rufus Pollock</a></p></div>
+                   
                 </div>
             </div>
             <div class="step">
-                <h2 class="red">date, place, names</h2>
+                <h2 class="red">date, places, names</h2>
                 <blockquote>
                     EpiDoc provides for both detail and flexibility in describing what is known or recorded about the origin and subsequent history of a text-bearing object. […] this information is collected in a &lt;history&gt; element that is part of the &lt;msDesc&gt; in the &lt;teiHeader&gt;. 
                 </blockquote>
                 <p class="x-small right"><a href="http://www.stoa.org/epidoc/gl/latest/supp-history.html" target="_blank">Provenance Of The Text-Bearing Object</a></p>
             </div>
             <div class="step">
-                <h2 class="red">place</h2>
+                <h2 class="red">places</h2>
+                <pre><code>/TEI/teiHeader/fileDesc/sourceDesc/msDesc/history/origin/origPlace</code></pre>
                 <table>
 
                     <tr><th>element</th><th>value</th></tr><tr> <td>settlement</td>
@@ -482,12 +506,63 @@
                     The date of orgin of the text (or object, if different) should be recorded in an origDate element in the &lt;origin&gt; section of the manuscript description area. [...]                        
                         It is generally recommended to encode the dating information in numerical form, following the proleptic Julian calendar, using the att.datable.custom attributes on the origDate element. These "custom" date attributes are required because the default dating system assumed by the basic TEI date attributes (att.datable) is the Gregorian calendar. Moreover, therefore, the dating element should always carry a datingMethod attribute pointing to a &lt;calendar&lt; element in the header
                 </blockquote>
-                <p class="x-small right"><a href="http://www.stoa.org/epidoc/gl/latest/supp-historigdate.html">Original Date Of Text And/Or Object</a></p></div>
+                <p class="x-small right"><a href="http://www.stoa.org/epidoc/gl/latest/supp-historigdate.html">Original Date Of Text And/Or Object</a></p>
+            </div>
             <div class="step"><h2 class="red">date</h2>
+                <blockquote>
+                    First, a Calendar Description element needs to be supplied in the teiHeader as described in 2.4.5 Calendar Description:</blockquote>
+                <p class="x-small right">see: TEI Guidelines <a href="https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/release/doc/tei-p5-doc/en/html/ND.html#NDDATECUSTOM">Using Non-Gregorian Calendars</a></p>
+                <pre><code>/TEI/teiHeader/profileDesc/calendarDesc</code></pre>
+    <pre><code>&lt;calendarDesc xml:id="HebCal"&gt;
+        &lt;calendar&gt;&lt;p&gt;Hebrew Calender&lt;/p&gt;&lt;/calendar&gt;
+&lt;/calendarDesc&gt;
+</code></pre>    
+                </div>
+            <div class="step"><h2 class="red">date</h2>
+ <pre><code>               /TEI/teiHeader/fileDesc/sourceDesc/msDesc/history/origin/origDate</code></pre>
             <table>
                 <tr><td>1272-12-06</td><td>julian</td></tr>
                 <tr><td>14. Tewet 5033</td><td>hebrew</td></tr>
-            </table></div>
+            </table>
+            <pre><code>&lt;date 
+    notBefore-custom="1272-12-06" 
+    datingMethod="http://en.wikipedia.org/wiki/Julian_calendar" 
+    calendar="#HebCal"&gt;
+&lt;/date&gt;
+</code></pre>
+            </div>
+            
+            
+            <div class="step"><h2 class="red">persons</h2>
+                <pre><code>/TEI/teiHeader/profileDesc/particDesc/listPerson</code></pre>
+                <table class="small"><tr><td>persName</td><td>Bela</td></tr>
+                <tr><td>death</td><td>1271-12-06</td></tr>
+                    <tr><td>xml:id</td><td>ffb-98-1</td></tr>
+                <tr><td>relation</td><td>daughter of Natan</td></tr></table>
+                <table class="small">
+                    <tr><td>persName</td><td>Natan</td></tr>
+                    <tr><td>xml:id</td><td>ffb-98-2</td></tr>
+                    <tr><td>relation</td><td>father of Bela</td></tr>
+                   
+                </table>
+            </div>
+            <div class="step">
+                <h2 class="red">relations</h2>
+                <pre><code>/TEI/teiHeader/profileDesc/particDesc/listPerson/listRelation/relation</code></pre>
+                <table class="small">
+                    <tr><th>attribute</th><th>value</th></tr>
+                    <tr><td>name</td><td>parent | spouse | sibling</td></tr>
+                    <tr><td>mutal</td><td>xml:ids of mutual relationship partners</td></tr>
+                    <tr><td>active</td><td>xml:id of active part  non-mutual relation</td></tr>
+                    <tr><td>passive</td><td>xml:id of passive part of non-mutual relation</td></tr>
+                    
+                </table>
+            </div>
+            <div class="step">
+                <h2 class="red">Physical Description</h2>
+                <blockquote>Information describing the physical aspects of an inscription is encoded in the &lt;physDesc&gt; element, which is part of the &lt;teiHeader&gt;.
+                    […]  You can align your definitions by aligning to a local or to an external Controlled Vocabulary.</blockquote><p class="x-small right"><a href="http://www.stoa.org/epidoc/gl/latest/supp-description.html">Physical Description</a></p>
+            </div>
             <div class="step">
                 <h2 class="red">Form follows Function</h2>
                 <blockquote>What characterises this class of objects is that they form a whole with
@@ -499,34 +574,23 @@
                     hosts"</blockquote>
                 <p class="x-small right">Felicetti et al., 2016</p>
             </div>
-            
-            <div class="step"><h2 class="red">persons and their relations</h2>
-                <table><tr><td>name</td><td>Bela</td></tr>
-                <tr><td>dateofdeath</td><td>1271-12-06</td></tr>
-                <tr><td>relation</td><td>daughter of Natan</td></tr></table>
-                <table>
-                    <tr><td>name</td><td>Natan</td>
-                    <td>relation</td><td>father of Bela</td></tr>
-                </table>
-            </div>
-            <div class="step">
-                <h2 class="red">Physical Description</h2>
-                <blockquote>Information describing the physical aspects of an inscription is encoded in the &lt;physDesc&gt; element, which is part of the &lt;teiHeader&gt;.
-                    […]  You can align your definitions by aligning to a local or to an external Controlled Vocabulary.</blockquote><p class="x-small right"><a href="http://www.stoa.org/epidoc/gl/latest/supp-description.html">Physical Description</a></p>
-            </div>
             <div class="step">
                 <h2 class="red">text-bearing object</h2>
-               <table> <tr>
-                    <td>material</td>
+               <table class="small"> 
+                   <tr><th>element</th><th>value</th><th>xPath</th></tr>
+                   <tr>
+                    <td>material</td><td>"stone"</td><td><pre><code>/TEI/teiHeader//physDesc/objectDesc/supportDesc/support/p/material</code></pre></td>
                 </tr>
                 <tr>
                     <td>dimensions</td>
+                    <td>70x62x37cm</td>
+                    <td><pre><code>/TEI/teiHeader/fileDesc//supportDesc/support/p/dimensions</code></pre></td>
                 </tr>
-                <tr>
-                    <td>form</td>
-                </tr>
+                
                 <tr>
                     <td>objecttype</td>
+                    <td>headstone</td>
+                    <td><pre><code>/TEI/teiHeader/fileDesc/sourceDesc//supportDesc/support/p/objectType</code></pre></td>
                 </tr></table>
             </div>
             
@@ -535,14 +599,19 @@
                 <h3>interoperability</h3>
             </div>
             <div class="step">
-                <h2 class="red">###</h2>
-                <blockquote class="down-50"> By using controlled vocabularies project-specific
-                    findings are addressed by unique identifiers [digital shelf mark] </blockquote>
+                <h2 class="red">linked data</h2>
+                <blockquote class="down-50">If you want to link to a specific definition of an information as a reference, you might want to point to external vocabularies, contribute in those with new terms and align where possible. In your Epidoc file you can insert references to these Authority Lists or Controlled Vocabularies.<br/>
+                    
+                    The easiest way to do this is by inserting a stable uri into the element with a @ref  </blockquote>
+                <p class="x-small right"><a href="http://www.stoa.org/epidoc/gl/latest/idx-nontei.html">External Vocabularies</a></p>
             </div>
             <div class="step ">
                 <h2 class="red">authority files | controlled vocabularies</h2>
-                <ul class="line-height-one-five medium">
-                    <li>places (ancient)– <a href="http://pleiades.stoa.org/places/678401"
+
+<h3>
+    places
+</h3>                <ul class="line-height-one-five medium">
+                    <li>ancient– <a href="http://pleiades.stoa.org/places/678401"
                             >Pleiades</a>, <a
                             href="http://www.getty.edu/vow/TGNServlet?english=Y&amp;find=Frankfurt&amp;place=inhabited+place&amp;page=1&amp;nation="
                             >Thesaurus of Geographic Names </a> [TGN] refer to Frankfurt as <a
@@ -550,12 +619,27 @@
                                 ><code>http://vocab.getty.edu/tgn/7005293</code></a>, place names in
                         the Hebrew Script – <a href="https://geo-kima.org">Kima Historical
                             Gazeteer</a> An open, attestation based, historical database</li>
+</ul>
+                <h3>persons</h3>
+                <ul class="line-height-one-five medium">
                     <li>person names – <a href="http://d-nb.info/gnd/11879132X"></a>German National
                         Library Identificators [GND] [<a
                             href="http://www.steinheim-institut.de/cgi-bin/epidat?id=ffb-80-1"
                             >example</a>]</li>
-
-
+                    <li><a href="https://viaf.org">VIAF</a> Virtual International Authority File</li>
+                </ul>
+                
+            </div>
+            <div class="step">
+                <h2 class="red">authority files | controlled vocabularies</h2>
+                <h3>dates</h3>
+                <ul  class="line-height-one-five medium">
+                    <li><a href="https://godot.date/home">GODOT</a> Graph of Dated Objects and Texts</li>
+                    <li><a href="http://perio.do/en/">PeriodO</a> A gazetteer of period definitions for linking and visualizing data.</li>
+                </ul>
+                
+<h3>objects</h3>
+                <ul  class="line-height-one-five medium">
                     <li>physical form | symbols | material<ul class="line-height-one-five">
 
 
@@ -563,7 +647,7 @@
                                     href="http://www.getty.edu/vow/AATFullDisplay?find=headstone&amp;logic=AND&amp;note=&amp;subjectid=300266769"
                                     >Arts and Architecture Thesaurus</a>
                                 <q>to improve access to information about art, architecture, and
-                                    material culture</q> [AAT] refer to as <a
+                                    material culture</q> [AAT] refer to <q>headstone</q> as <a
                                     href="http://vocab.getty.edu/aat/300266769"
                                         ><code>http://vocab.getty.edu/aat/300266769</code></a></li>
                             <li><a href="http://www.iconclass.org/rkd/25G41%28LILY%29/"
