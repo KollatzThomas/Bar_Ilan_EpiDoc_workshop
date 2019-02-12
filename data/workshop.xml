@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Headstone of Bela, daughter of Natan from the Jewish Cemetery in Frankfort</title>
+            </titleStmt>
+            <publicationStmt>
+                <authority></authority>
+                <idno type="filename">workshop.xml</idno>
+                <idno type="URI">http://www.steinheim-institut.de/cgi-bin/epdiat?id=ffb-98</idno>
+                <availability><licence><ref target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Licence 4.0</ref>.</licence></availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>museum/archive</repository>
+                        <idno>inventory number</idno>
+                    </msIdentifier>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>description of object/monument (likely to include <material/>
+                                    and <objectType/> information, <dimensions/>, etc.)</support>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout>description of text field/campus</layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote>description of letters, possibly including <height>letter-heights</height>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origPlace><settlement>Frankfurt</settlement><geogName>Jewish Cemetery</geogName></origPlace>
+                            <origDate>Date of origin</origDate>
+                        </origin>
+                        <provenance type="found"> Findspot and circumstances/context
+                        </provenance>
+                        <provenance type="observed">Modern location(s) (if different from repository, above)
+                        </provenance>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic url="http://www.steinheim-institut.de/daten/ffb-98.jpg"/>
+    </facsimile>
+    <text>
+        <body>
+            <div type="edition" xml:space="preserve">
+<div type="textpart" subtype="front" xml:lang="he-hebr">                <ab>
+<lb/>עד הגל הזה <lb/>ועדה המצבה הזאת 
+<lb/>אשר יריתי לראש ה <lb break="no"/><gap reason="lost" unit="character" extent="2"/><supplied reason="subaudible"  confidence="100" cert="high">בח</supplied>ורה חשובה מרת <lb/>בילא בת ר׳ נתן 
+שנפטר <lb/>י״ד בטבת שנת ה׳ אלפים <lb/>ול״ג לפרט
+הצור <lb/>יפקד נשמת בג עדן סלה
+                </ab></div>
+            </div>
+            <div type="apparatus">
+                <p>external apparatus criticus (if applicable)</p>
+            </div>
+            <div type="translation">
+                <p>translation(s)</p>
+            </div>
+            <div type="commentary">
+                <p>commentary</p>
+            </div>
+            <div type="bibliography">
+                <p>bibliography of previous editions, discussion, etc.</p>
+            </div>
+        </body>
+    </text>
+</TEI>
